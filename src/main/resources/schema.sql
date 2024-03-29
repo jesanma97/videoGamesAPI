@@ -1,0 +1,71 @@
+create table VIDEOGAME
+(
+    ID    int          not null AUTO_INCREMENT,
+    TITLE varchar(100) not null,
+    GENRE varchar(50) not null,
+    RELEASE_DATE TIMESTAMP DEFAULT CURRENT_TIMESTAMP not null,
+    PRIMARY KEY (ID)
+);
+create table PROMOTION
+(
+    ID           int not null AUTO_INCREMENT,
+    VALID_FROM   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRICE        numeric(5, 2),
+    VIDEOGAME_ID int not null,
+    PRIMARY KEY (ID),
+    CONSTRAINT fk_VIDEOGAME_ID_PROMOTION
+        FOREIGN KEY (VIDEOGAME_ID)
+            REFERENCES VIDEOGAME (ID)
+);
+
+
+create table STOCK
+(
+    ID      INT        not null AUTO_INCREMENT,
+    AVAILABILITY boolean,
+    LAST_UPDATED TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    VIDEOGAME_ID int        not null,
+    PRIMARY KEY (ID),
+    CONSTRAINT fk_VIDEOGAME_ID_STOCK
+        FOREIGN KEY (VIDEOGAME_ID)
+            REFERENCES VIDEOGAME (ID)
+);
+
+create table SAGA
+(
+  ID INT not null AUTO_INCREMENT,
+  TITLE   varchar(100) not null,
+  RELEVANCE INT NOT NULL,
+  PRIMARY KEY (ID)
+);
+
+create table SAGA_RELATED
+(
+    SAGA_ID_RELATED_1 INT not null,
+    SAGA_ID_RELATED_2 INT not null,
+    PRIMARY KEY (SAGA_ID_RELATED_1, SAGA_ID_RELATED_2),
+    CONSTRAINT FK_SAGA_ID_RELATED_1
+        FOREIGN KEY (SAGA_ID_RELATED_1)
+            REFERENCES SAGA (ID),
+    CONSTRAINT FK_SAGA_ID_RELATED_2
+        FOREIGN KEY (SAGA_ID_RELATED_2)
+            REFERENCES SAGA(ID)
+);
+
+create table SAGA_VIDEOGAME(
+  SAGA_ID int not null,
+  VIDEOGAME_ID int not null,
+
+  PRIMARY KEY (SAGA_ID, VIDEOGAME_ID),
+  CONSTRAINT FK_SAGA_ID_SAGA_VIDEOGAME
+      FOREIGN KEY (SAGA_ID)
+          REFERENCES SAGA (ID),
+  CONSTRAINT FK_VIDEOGAME_ID_SAGA_VIDEOGAME
+       FOREIGN KEY (VIDEOGAME_ID)
+        REFERENCES VIDEOGAME(ID)
+);
+
+
+
+
+
