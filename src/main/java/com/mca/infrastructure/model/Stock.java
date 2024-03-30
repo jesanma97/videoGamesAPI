@@ -8,7 +8,7 @@ import java.sql.Timestamp;
 @Data
 @Builder
 public class Stock {
-    private int id;
+    private Long id;
     private boolean availability;
     private Timestamp lastUpdated;
     private VideoGame videoGame;

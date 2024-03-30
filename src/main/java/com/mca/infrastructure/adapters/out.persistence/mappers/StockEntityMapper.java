@@ -2,6 +2,7 @@ package com.mca.infrastructure.adapters.out.persistence.mappers;
 
 import com.mca.infrastructure.adapters.out.persistence.entities.StockEntity;
 import com.mca.infrastructure.model.Stock;
+import com.mca.infrastructure.model.VideoGameEvent;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

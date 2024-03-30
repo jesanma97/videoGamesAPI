@@ -1,4 +1,4 @@
-package com.mca.infrastructure;
+package com.mca.infrastructure.adapters.kafka;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
