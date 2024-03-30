@@ -1,7 +1,7 @@
 package com.mca.application.ports.in;
 
-import java.util.List;
+import org.springframework.http.ResponseEntity;
 
 public interface SagaRelatedConsultPort {
-    List<String> getIdsSagasRelatedBySagaId(int sagaId);
+    ResponseEntity<?> getIdsSagasRelatedBySagaId(int sagaId);
 }

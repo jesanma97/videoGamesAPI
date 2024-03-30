@@ -1,7 +1,7 @@
 package com.mca.application.ports.out;
 
-import java.util.List;
+import org.springframework.http.ResponseEntity;
 
 public interface SagaRelatedPersistencePort {
-    List<String> getIdsSagasRelatedBySagaId(int sagaId);
+    ResponseEntity<?> getIdsSagasRelatedBySagaId(int sagaId);
 }

@@ -1,0 +1,59 @@
+{
+	"info": {
+		"_postman_id": "e0833e2e-1145-4041-8e25-fe9e96543ad3",
+		"name": "MCA BackEnd",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16882249",
+		"_collection_link": "https://warped-rocket-737216.postman.co/workspace/New-Team-Workspace~65448f84-40d8-4cd0-a0a7-bd779e91bd0c/collection/16882249-e0833e2e-1145-4041-8e25-fe9e96543ad3?action=share&source=collection_link&creator=16882249"
+	},
+	"item": [
+		{
+			"name": "getSagasByGameIdOK",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "getSagasByGameId404",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "getSagasByGameId400",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "getSagasRelatedBySagaIdOK",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "getSagasRelatedBySagaId404",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "getSagasRelatedBySagaId400",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
