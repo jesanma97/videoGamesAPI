@@ -46,6 +46,13 @@ public class SagaController {
         return response;
     }
 
+    /**
+     * Check if id is null or if the type is not valid
+     *
+     * @param  id
+     * @return  If it's null returns BadRequest, if its type is not valid returns
+     *                              Not Found, if it isn´t any problem an OK
+     */
     private ResponseEntity<?> validationId(Object id){
         if (id == null) {
             return ResponseEntity.badRequest().body(new ErrorMca(HttpStatus.BAD_REQUEST.value(), "ID cannot be null"));

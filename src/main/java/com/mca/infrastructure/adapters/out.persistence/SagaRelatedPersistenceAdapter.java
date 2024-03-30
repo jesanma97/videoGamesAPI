@@ -26,6 +26,14 @@ public class SagaRelatedPersistenceAdapter implements SagaRelatedPersistencePort
     }
 
     @Override
+    /**
+     * Get all sagas related by id of other saga
+     *
+     * @param  sagaId
+     * @return  Returns ResponseEntity with OK status if it´s not problem,
+     * a NOT FOUND status if there is no results,
+     * or INTERNAT SERVER ERROR if there is any database error
+     */
     public ResponseEntity<?> getIdsSagasRelatedBySagaId(int sagaId) {
         List<String> listIdsSagasObtained;
         try{

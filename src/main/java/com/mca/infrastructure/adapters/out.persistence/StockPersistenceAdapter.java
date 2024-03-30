@@ -21,7 +21,13 @@ public class StockPersistenceAdapter implements StockPersistencePort {
     public StockPersistenceAdapter(StockDao stockDao){
         this.stockDao = stockDao;
     }
+
     @Override
+    /**
+     * Update stock's state of videoGames
+     *
+     * @param  videoGameEvent
+     */
     public void updateStockVideoGame(VideoGameEvent videoGameEvent) {
         try{
             StockEntity stockEntity = new StockEntity();
