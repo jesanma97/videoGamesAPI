@@ -29,6 +29,14 @@ public class SagaVideoGamePersistenceAdapter implements SagaVideoGamePersistence
         this.sagaVideoGameDao = sagaVideoGameDao;
     }
 
+    /**
+     * Get all sagas by id of game
+     *
+     * @param  gameId
+     * @return  Returns ResponseEntity with OK status if it´s not problem,
+     * a NOT FOUND status if there is no results,
+     * or INTERNAT SERVER ERROR if there is any database error
+     */
     @Override
     public ResponseEntity<?> getListSagasByGameId(int gameId) {
         List<Saga> sagaList;
