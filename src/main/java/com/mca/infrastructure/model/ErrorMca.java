@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ErrorMca {
-    private int codeError;
+    private int errorCode;
     private String errorText;
 }

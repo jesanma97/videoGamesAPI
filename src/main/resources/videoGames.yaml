@@ -20,6 +20,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Sagas'
+        '404':
+          description: No saga found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error404'
+        '500':
+          description: An error occurred while trying to retrieve the sagas from the game ID 2000
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error500'
 components:
   schemas:
     Sagas:
@@ -49,3 +61,21 @@ components:
         - title
         - genre
         - releaseDate
+    Error404:
+      type: object
+      properties:
+        errorCode:
+          type: integer
+          example: 404
+        errorText:
+          type: string
+          example: No saga found
+    Error500:
+      type: object
+      properties:
+        errorCode:
+          type: integer
+          example: 500
+        errorText:
+          type: string
+          example: An error occurred while trying to retrieve the sagas from the game ID 2000

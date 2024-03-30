@@ -23,6 +23,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/RelatedGameSagas'
+        '404':
+          description: No saga found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error404'
+        '500':
+          description: An error occurred while trying to retrieve the ids of sagas related with the id 2000
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error500'
 components:
   schemas:
     RelatedGameSagas:
@@ -32,6 +44,21 @@ components:
       uniqueItems: true
       items:
         type: string
-
-
-       
+    Error404:
+      type: object
+      properties:
+        errorCode:
+          type: integer
+          example: 404
+        errorText:
+          type: string
+          example: No saga found
+    Error500:
+      type: object
+      properties:
+        errorCode:
+          type: integer
+          example: 500
+        errorText:
+          type: string
+          example: An error occurred while trying to retrieve the ids of sagas related with the id 2000
