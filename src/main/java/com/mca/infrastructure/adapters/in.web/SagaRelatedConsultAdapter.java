@@ -3,9 +3,8 @@ package com.mca.infrastructure.adapters.in.web;
 import com.mca.application.ports.in.SagaRelatedConsultPort;
 import com.mca.application.services.SagaRelatedService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class SagaRelatedConsultAdapter implements SagaRelatedConsultPort {
@@ -15,7 +14,7 @@ public class SagaRelatedConsultAdapter implements SagaRelatedConsultPort {
         this.sagaRelatedService = sagaRelatedService;
     }
     @Override
-    public List<String> getIdsSagasRelatedBySagaId(int sagaId) {
+    public ResponseEntity<?> getIdsSagasRelatedBySagaId(int sagaId) {
         return sagaRelatedService.getIdsSagasRelatedBySagaId(sagaId);
     }
 }
