@@ -12,9 +12,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class StockPersistenceAdapter implements StockPersistencePort {
-    private static final Logger log = LoggerFactory.getLogger(StockPersistenceAdapter.class);
+    private final Logger log = LoggerFactory.getLogger(StockPersistenceAdapter.class);
     private StockDao stockDao;
 
     @Autowired
@@ -34,7 +36,10 @@ public class StockPersistenceAdapter implements StockPersistencePort {
             stockEntity.setId(Math.toIntExact(videoGameEvent.getStock_id()));
             stockEntity.setAvailability(videoGameEvent.isAvailability());
             stockEntity.setLastUpdated(videoGameEvent.getTime_update());
-            stockDao.save(stockEntity);
+            Optional<StockEntity> stockAvailable = stockDao.findById(stockEntity.getId());
+            if(stockAvailable.isPresent()){
+                stockDao.updateStock(stockEntity);
+            }
         }catch (Exception e) {
             Gson gson = new Gson();
             String videoGameEventJSON = gson.toJson(videoGameEvent);
