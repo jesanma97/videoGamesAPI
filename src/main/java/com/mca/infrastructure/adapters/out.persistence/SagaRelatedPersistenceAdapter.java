@@ -38,7 +38,7 @@ public class SagaRelatedPersistenceAdapter implements SagaRelatedPersistencePort
         List<String> listIdsSagasObtained;
         try{
             List<Object[]> listObjectsSagas = sagaRelatedDao.getListIdsSagasRelatedBySagaId(sagaId);
-            if(listObjectsSagas.size() == 0){
+            if(listObjectsSagas.isEmpty()){
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ErrorMca(HttpStatus.NOT_FOUND.value(), "No saga found"));
             }
             Collections.sort(listObjectsSagas, (a, b) -> ((Integer) b[1]).compareTo((Integer) a[1]));

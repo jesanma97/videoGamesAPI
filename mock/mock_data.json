@@ -1,52 +1,60 @@
 [
   {
-    "path": "/game-saga/1/related-sagas",
+    "path": "/api/game-saga/1/related-sagas",
     "body": "[2,3,4]",
     "headers": {"Content-Type": "application/json"}
   },
   {
-    "path": "/game-saga/2/related-sagas",
-    "body": "[3, 7, 8]",
+    "path": "/api/game-saga/2/related-sagas",
+    "body": "[3,7,8]",
     "headers": {"Content-Type": "application/json"}
   },
   {
-    "path": "/game-saga/3/related-sagas",
-    "body": "[7, 8, 9]",
+    "path": "/api/game-saga/3/related-sagas",
+    "body": "[7,8,9]",
     "headers": {"Content-Type": "application/json"}
   },
   {
-    "path": "/game-saga/4/related-sagas",
-    "body": "[1, 2, 5]",
+    "path": "/api/game-saga/4/related-sagas",
+    "body": "[1,2,5]",
     "headers": {"Content-Type": "application/json"}
   },
   {
-    "path": "/game-saga/5/related-sagas",
-    "body": "[1, 2, 6]",
+    "path": "/api/game-saga/5/related-sagas",
+    "body": "[1,2,6]",
     "headers": {"Content-Type": "application/json"}
   },
    {
-    "path": "/game-saga/26/related-sagas",
-    "body": "[1, 100, 6]",
+    "path": "/api/game-saga/26/related-sagas",
+    "body": "[1,100,6]",
     "headers": {"Content-Type": "application/json"}
   },
    {
-    "path": "/game-saga/37/related-sagas",
-    "body": "[1000, 7, 8]",
+    "path": "/api/game-saga/37/related-sagas",
+    "body": "[1000,7,8]",
     "headers": {"Content-Type": "application/json"}
   },
    {
-    "path": "/game-saga/18/related-sagas",
-    "body": "[1, 2, 10000]",
+    "path": "/api/game-saga/18/related-sagas",
+    "body": "[1,2,10000]",
     "headers": {"Content-Type": "application/json"}
   },
    {
-    "path": "/game-saga/12/related-sagas",
-    "body": " [20, 18, 19]",
+    "path": "/api/game-saga/12/related-sagas",
+    "body": "[20,18,19]",
     "headers": {"Content-Type": "application/json"}
   },
    {
-    "path": "/game-saga/9/related-sagas",
-    "body": "[11, 15, 19]",
+    "path": "/api/game-saga/9/related-sagas",
+    "body": "[11,15,19]",
     "headers": {"Content-Type": "application/json"}
-  }
+  },{
+  "path": "/api/game/1/saga",
+  "body": "[{\"id\": 1, \"title\": \"Sonic\", \"relevance\": 1}]",
+  "headers": {"Content-Type": "application/json"}
+  },{
+  "path": "/api/game/2/saga",
+  "body": "[{\"id\": 2, \"title\": \"Mario\", \"relevance\": 4}]",
+  "headers": {"Content-Type": "application/json"}
+}
 ]

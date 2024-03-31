@@ -33,6 +33,9 @@ public class SagaController {
     public ResponseEntity<?> getSagasByGameId(@PathVariable(required = false) Object gameId){
         ResponseEntity<?> response = validationId(gameId);
         if(response.getStatusCode().is2xxSuccessful()){
+            if(gameId instanceof String){
+                gameId = Integer.parseInt((String) gameId);
+            }
             response = sagaVideoGameConsultAdapterPort.getListSagasByGameId((Integer) gameId);
         }
         return response;
@@ -41,6 +44,9 @@ public class SagaController {
     public ResponseEntity<?> getSagasRelatedBySagaId(@PathVariable(required = false) Object sagaId){
         ResponseEntity<?> response = validationId(sagaId);
         if(response.getStatusCode().is2xxSuccessful()){
+            if(sagaId instanceof String){
+                sagaId = Integer.parseInt((String) sagaId);
+            }
             response = sagaRelatedConsultPort.getIdsSagasRelatedBySagaId((Integer) sagaId);
         }
         return response;
@@ -59,7 +65,12 @@ public class SagaController {
         }
 
         if (!(id instanceof Integer)) {
-            return ResponseEntity.badRequest().body(new ErrorMca(HttpStatus.NOT_FOUND.value(), "The format of ID is not correct"));
+            try{
+                Integer.parseInt((String) id);
+            }catch(ClassCastException e){
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ErrorMca(HttpStatus.NOT_FOUND.value(), "The format of ID is not correct"));
+            }
+
         }
         return ResponseEntity.ok("");
     }
