@@ -67,7 +67,7 @@ public class SagaController {
         if (!(id instanceof Integer)) {
             try{
                 Integer.parseInt((String) id);
-            }catch(ClassCastException e){
+            }catch(ClassCastException | NumberFormatException e){
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ErrorMca(HttpStatus.NOT_FOUND.value(), "The format of ID is not correct"));
             }
 
