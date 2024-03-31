@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "b1e2aed0-7485-4de7-9c7f-010b7d7935ea",
+		"name": "MCA BackEnd",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33970414"
+	},
+	"item": [
+		{
+			"name": "getSagasByGameIdOK",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/game/1/saga",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"game",
+						"1",
+						"saga"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getSagasByGameId404",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/game/2000/saga",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"game",
+						"2000",
+						"saga"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getSagasByGameId400",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/game/t/saga",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"game",
+						"t",
+						"saga"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getSagasRelatedBySagaIdOK",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/game-saga/1/related-sagas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"game-saga",
+						"1",
+						"related-sagas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getSagasRelatedBySagaId404",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/game-saga/2000/related-sagas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"game-saga",
+						"2000",
+						"related-sagas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getSagasRelatedBySagaId400",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/game-saga/t/related-sagas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"game-saga",
+						"t",
+						"related-sagas"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
